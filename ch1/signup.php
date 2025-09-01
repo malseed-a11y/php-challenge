@@ -43,7 +43,7 @@ function signup($username, $password, $phone, $users)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = validate($_POST["username"]);
     $password = validate($_POST["password"]);
-    $phone = validate($_POST["phone"]);
+    $phone = validate($_POST["full_phone_number"]);
 
     signup($username, $password, $phone, $users);
 }

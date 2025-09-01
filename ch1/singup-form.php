@@ -37,7 +37,7 @@
                 </label>
                 <input id="phone" type="tel" name="phone" required>
 
-                <input type="hidden" id="full-number" name="full_number">
+                <input type="hidden" id="full_phone_number" name="full_phone_number">
 
                 <input type="submit" value="ارسل">
                 <p>لديك حساب؟ <a href="index.php">تسجيل الدخول</a></p>
@@ -86,7 +86,7 @@
 
             if (phone_input.value) {
                 if (iti.isValidNumber()) {
-                    document.getElementById("full-number").value = iti.getNumber();
+                    document.getElementById("full_phone_number").value = iti.getNumber();
                 }
             }
         };
