@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         foreach ($users as $user) {
             if (
                 ($user["username"] === $usernameOrPhone || $user["phone"] === $usernameOrPhone)
-                && $user["password"] === $password
+                && password_verify($password, $user["password"])
             ) {
                 $found = true;
                 $_SESSION['username'] = $user["username"];
@@ -34,11 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
         if (!$found) {
-            header("Location: index.php?error=Invalid username or password");
+            header("Location: login-form.php?error=Invalid username or password");
             exit();
         }
     } else {
-        header("Location: index.php?error=Invalid form submission");
+        header("Location: login-form.php?error=Invalid form submission");
         exit();
     }
 }

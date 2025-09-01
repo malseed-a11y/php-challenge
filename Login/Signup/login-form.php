@@ -12,7 +12,7 @@
     <div class="container">
 
         <div class="image-side">
-            <img src="../ch1/img/pexels-eberhardgross-443446.jpg" alt="">
+            <img src="../Login-Signup/img/pexels-eberhardgross-443446.jpg" alt="">
 
         </div>
 
@@ -32,23 +32,7 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const params = new URLSearchParams(window.location.search);
-
-            if (params.has('error')) {
-
-                const errorMessage = (params.get('error') || 'حدث خطأ غير متوقع').slice(0, 300);
-
-                Swal.fire({
-                    icon: 'error',
-                    title: 'opss...',
-                    text: errorMessage,
-
-                });
-            }
-        });
-    </script>
+    <script src="./js/login-error-handler.js"></script>
 </body>
 
 </html>
